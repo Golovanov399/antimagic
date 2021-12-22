@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Antimagic",
+  "version": "1.4.1",
+
+  "description": "Shows actual cf users colors.",
+
+  "icons": {
+    "48": "icons/antimagic-48.png",
+    "96": "icons/antimagic-96.png",
+    "128": "icons/antimagic-128.png"
+  },
+
+  "permissions": [
+    "<all_urls>",
+    "storage"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://codeforces.com/*"],
+      "js": ["antimagic.js"]
+    }
+  ]
+}
