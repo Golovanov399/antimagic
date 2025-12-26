@@ -63,6 +63,9 @@ function fixColors(text) {
 		if (user.textContent === "MikeMirzayanov") {
 			continue;
 		}
+		if (!user.attributes["href"]) {
+			continue;
+		}
 		username = user.attributes["href"].textContent.slice(9);
 		var set_color = "";
 		var real_color = "user-black";

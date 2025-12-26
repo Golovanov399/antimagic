@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Antimagic",
-  "version": "1.5",
+  "version": "1.5.1",
 
   "description": "Shows actual cf users colors.",
 
@@ -17,7 +17,8 @@
   ],
 
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background_chrome.js",
+    "scripts": ["background.js"]
   },
 
   "content_scripts": [
@@ -27,5 +28,11 @@
     }
   ],
   
-  "host_permissions": ["https://api.github.com/*", "https://gist.github.com/*"]
+  "host_permissions": ["https://api.github.com/*", "https://gist.github.com/*"],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{edc5784d-d7c2-4e32-bbe1-4701133357d5}"
+    }
+  }
 }
