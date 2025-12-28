@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Antimagic",
-  "version": "1.5.1",
+  "version": "1.5.2",
 
   "description": "Shows actual cf users colors.",
 
@@ -32,7 +32,10 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "{edc5784d-d7c2-4e32-bbe1-4701133357d5}"
+      "id": "{edc5784d-d7c2-4e32-bbe1-4701133357d5}",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }

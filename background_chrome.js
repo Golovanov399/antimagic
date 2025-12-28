@@ -3,9 +3,9 @@ function obtainHandles(callback) {
 		.then(response => response.text())
 		.then(text => JSON.parse(text))
 		.then(result => result[0]["committed_at"]);
-	const our_value = chrome.storage.local.get({"updated_at": null}, our => {
+	const our_value = chrome.storage.local.get({"updated_at": null, "handles": null}, our => {
 		updated_at.then(upd => {
-			if (upd !== our.updated_at) {
+			if (upd !== our.updated_at || our["handles"] === null) {
 				chrome.storage.local.set({"updated_at": upd}, () => {
 					fetch("https://gist.github.com/Golovanov399/9e4b23c4f6468aa02a1e36b89bdea291/raw/gistfile1.txt")
 						.then(response => response.text())
